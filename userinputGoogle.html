@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <style type="text/css">
+      #map-canvas { height: 600px; width: 800px;}
+    </style>
+    
+    <button></button>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=GMAPKEY"></script>
+  </head>
+  <body>
+  <input type="text" placeholder="Latitude" id="lat">
+    <input type="text" placeholder="Longitude" id = "long">
+    <div id="map-canvas"></div>
+    <script>
+    
+var button = document.querySelector("button")
+      button.addEventListener("click", function(){
+     var latitude = document.querySelector("#lat")
+      var longitude = document.querySelector("#long")
+      
+    var mapOptions = {
+        center: { lat: parseFloat(latitude.value), lng: parseFloat(longitude.value)},
+        zoom: 9
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    
+      console.log("button");
+      })
+     
+      
+    </script>
+  </body>
+</html>
