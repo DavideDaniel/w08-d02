@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    	<script src="../../APIkeys.JSON"></script>
         <meta charset="UTF-8">
         <title>Sunlight</title>
     </head>
@@ -11,15 +12,17 @@
         <h2></h2>>
     <ul></ul>
     <script type="text/javascript">
-    var apikeys = require('./APIkeys.JSON')
-    var sunlightkey = apikeys.results.Sunlight
+    var xhr = new XMLHttpRequest();
+    xhr.open( "GET", "../../APIkeys.JSON");
+    xhr.addEventListener( "load", function () {
+    var sunlightkey = apikeys.Sunlight
     ////Part 1
     // var button = document.querySelector("button")
     // button.addEventListener("click", function(){
     // var input = document.querySelector("input")
     // var name = input.value
     // console.log(name);
-    // var url = "https://congress.api.sunlightfoundation.com/legislators?apikey=1d83a06543c14e709d107937d7d96b06&last_name=" + name
+    // var url = "https://congress.api.sunlightfoundation.com/legislators?apikey="+sunlightkey+"&last_name=" + name
     // var xhr = new XMLHttpRequest();
     // xhr.open("GET", url);
     // xhr.addEventListener("load", function(){
@@ -38,7 +41,7 @@
     // var input = document.querySelector("input")
     // var name = input.value
     // console.log(name);
-    // var url = "https://congress.api.sunlightfoundation.com/legislators?fields=twitter_id&apikey=1d83a06543c14e709d107937d7d96b06&last_name=" + name
+    // var url = "https://congress.api.sunlightfoundation.com/legislators?fields=twitter_id&apikey="+sunlightkey+"&last_name=" + name
     // var xhr = new XMLHttpRequest();
     // xhr.open("GET", url);
     // xhr.addEventListener("load", function(){
